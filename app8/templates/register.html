@@ -1,0 +1,54 @@
+{% extends "base2.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+Register
+{% endblock %}
+
+
+{% block page %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-4 col-md-4">
+            <span class="heading"><h1>用户注册</h1></span>
+            <form class="form-horizontal" method="POST">
+                <div class="form-group">
+                   {{ form.hidden_tag() }}
+                </div>
+                <div class="form-group">
+                    {{ wtf.form_field(form.name) }}
+                </div>
+                <div class="form-group">
+                    {{ wtf.form_field(form.passwd) }}
+                </div>
+                <div class="form-group">
+                    {{ wtf.form_field(form.confirm) }}
+                </div>
+                <div class="form-group">
+                    {{ wtf.form_field(form.submit) }}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

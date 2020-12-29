@@ -1,0 +1,9 @@
+{% macro render_comments(comments) %}
+    <ol>
+        {% for name, comment in comments.items() %}
+        <li>
+            {{name}}: {{comment}}
+        </li>
+        {% endfor %}
+    </ol>
+{% endmacro %}

@@ -1,0 +1,59 @@
+{% extends "base2.html" %}
+
+{% block page %}
+
+<div class="page-header">
+    <h1>hello,{{ name }}</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <span class="label label-success" data-toggle="collapse" data-target="#shuoshuo">new</span>
+        <form class="form-horizontal collapse" id="shuoshuo" method="post">
+            <div class="form-group">
+                <label for="textarea">说说你此刻的心情吧.....</label>
+                <textarea class="form-control id="textarea" name="textarea" rows="8"></textarea>
+            </div>
+            <button type="submit" data-dismiss="form">提交</button>
+        </form>
+    </div>
+</div>
+
+{% for time, comment in comments %}
+<h6 class="col-md-offset-3 col-md-3">{{ time }}:</h6>
+<p class="col-md-offset-3 col-md-5">{{ comment }}</p>
+<br>
+{% endfor %}
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

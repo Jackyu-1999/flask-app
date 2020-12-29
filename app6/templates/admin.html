@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10">
+            <table class="table table-bordered">
+                <tr class="success">
+                    <td>user</td>
+                    <td>pwd</td>
+                    <td>action</td>
+                </tr>
+
+                {% for user in users %}
+
+                <tr class="info">
+                    <form method="post">
+                    <input name="id" class="hidden" value={{user.id}}>
+                    <td><input type="text" value="{{user.name}}" name="name"readonly="true" ondblclick="this.readOnly=false" onchange="this.readOnly=true"></td>
+
+                   <td><input type="text" value="{{user.passwd}}" name="passwd"readonly="true" ondblclick="this.readOnly=false" onchange="this.readOnly=true"></td>
+
+                   <td>
+
+                    <button type="submit">update</button>
+                    <a class="btn btn-danger btn-xs" href="/?delete_id={{user.id}}">delete</a></td>
+                </form>
+                </tr>
+
+                {% endfor %}
+
+                <tr class="success">
+                    <td colspan="3" align="center"><a data-toggle="collapse" data-target="#new">add</a></td>
+
+                </tr>
+                <tr class="collapse" id="new">
+                    <form method="post">
+                        <td> <input type="text" name="new_name" placeholder="user name"> </td>
+                    <td> <input type="text" name="new_passwd" placeholder="pass word"> </td>
+
+                    <td><button type="submit">save</button></td>
+
+                    </form>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

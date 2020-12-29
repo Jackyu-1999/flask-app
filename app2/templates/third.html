@@ -1,0 +1,25 @@
+
+{% if user %}
+    <h1>Hello, {{user}}!</h1>
+{% else %}
+    <h1>hello, stranger!</h1>
+{% endif %}
+
+<hr/>
+<ul>
+    {% for name, comment in comments.items() %}
+    <li>{{name}}: {{comment}}</li>
+    {% endfor %}
+</ul>
+
+
+{% import "macros.html" as macros %}
+{{ macros.render_comments(comments) }}
+
+
+
+
+
+
+
+
